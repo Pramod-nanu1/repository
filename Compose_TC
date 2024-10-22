@@ -1,0 +1,190 @@
+Here are 10 test cases for testing the “Compose” function in Gmail, based on the requirements provided:
+
+Traditional Test Cases
+
+Positive Test Cases
+
+	1.	Test Case ID: TC_001
+	•	Test Case Name: Verify that the email is successfully sent.
+	•	Steps:
+	1.	Open Gmail and click on “Compose.”
+	2.	Enter a valid recipient email address in the “To” field.
+	3.	Enter “Incubyte” in the subject field.
+	4.	Enter “QA test for Incubyte” in the body field.
+	5.	Click “Send.”
+	•	Expected Result: The email is successfully sent, and a confirmation message is displayed.
+
+	2.	Test Case ID: TC_002
+	•	Test Case Name: Verify that the email is saved as a draft when closing the compose window without sending.
+	•	Steps:
+	1.	Open Gmail and click on “Compose.”
+	2.	Enter “Incubyte” in the subject field and “QA test for Incubyte” in the body field.
+	3.	Close the compose window without sending.
+	•	Expected Result: The email is saved in the “Drafts” folder.
+
+	3.	Test Case ID: TC_003
+	•	Test Case Name: Verify that the “Send” button is enabled after entering both a recipient, subject, and body.
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter a valid recipient email.
+	3.	Enter “Incubyte” in the subject field and “QA test for Incubyte” in the body field.
+	•	Expected Result: The “Send” button is enabled once both fields are populated.
+
+	4.	Test Case ID: TC_004
+	•	Test Case Name: Verify that the user can add attachments to the composed email.
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter a valid recipient, subject, and body.
+	3.	Attach a file by clicking the attachment icon.
+	4.	Click “Send.”
+	•	Expected Result: The email is sent with the attachment, and a confirmation message is shown.
+
+	5.	Test Case ID: TC_005
+	•	Test Case Name: Verify that the user can format the body text (bold, italic, underline) while composing the email.
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter the body text as “QA test for Incubyte.”
+	3.	Apply bold, italic, and underline formatting.
+	•	Expected Result: The text should be successfully formatted as per the user’s input.
+
+Negative Test Cases
+
+	6.	Test Case ID: TC_006
+	•	Test Case Name: Verify that an error message is displayed when trying to send an email without a recipient.
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter “Incubyte” in the subject field and “QA test for Incubyte” in the body field.
+	3.	Do not enter a recipient email address.
+	4.	Click “Send.”
+	•	Expected Result: An error message is shown indicating that a recipient email is required.
+
+	7.	Test Case ID: TC_007
+	•	Test Case Name: Verify that an email cannot be sent without a subject (subject left blank).
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Leave the subject field blank and enter “QA test for Incubyte” in the body field.
+	3.	Enter a valid recipient in the “To” field.
+	4.	Click “Send.”
+	•	Expected Result: A warning is displayed indicating the subject is blank, and the user is prompted to confirm sending.
+
+	8.	Test Case ID: TC_008
+	•	Test Case Name: Verify that the email cannot be sent with an invalid email address.
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter “invalid-email” in the “To” field.
+	3.	Enter “Incubyte” in the subject and “QA test for Incubyte” in the body.
+	4.	Click “Send.”
+	•	Expected Result: An error message is shown indicating that the recipient email is invalid.
+
+	9.	Test Case ID: TC_009
+	•	Test Case Name: Verify that the user cannot send an email with an oversized attachment.
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter a recipient email, subject, and body.
+	3.	Attach a file larger than the allowed size limit (e.g., 25 MB).
+	4.	Click “Send.”
+	•	Expected Result: An error message is shown indicating the attachment size exceeds the limit.
+
+	10.	Test Case ID: TC_010
+
+	•	Test Case Name: Verify that the email cannot be sent with an empty body (body left blank).
+	•	Steps:
+	1.	Open Gmail and click “Compose.”
+	2.	Enter “Incubyte” in the subject field.
+	3.	Leave the body field blank.
+	4.	Enter a valid recipient in the “To” field.
+	5.	Click “Send.”
+	•	Expected Result: The user is prompted to confirm sending an email with an empty body.
+
+These test cases cover a wide range of functionalities, including positive scenarios like sending an email with attachments and formatting, as well as negative scenarios like missing recipient or subject error,
+
+
+
+
+Here are 10 BDD-style test cases for the “Compose” function in Gmail, covering both positive and negative scenarios:
+
+Positive Test Cases
+
+	1.	Feature: Send an email successfully.
+	•	Scenario: Successfully send an email with subject “Incubyte” and body “QA test for Incubyte.”
+	•	Given the user is logged into Gmail
+	•	When the user clicks on “Compose”
+	•	And enters “Incubyte” in the subject field
+	•	And enters “QA test for Incubyte” in the body field
+	•	And enters a valid recipient in the “To” field
+	•	And clicks “Send”
+	•	Then the email should be sent successfully
+	•	And the user should see a confirmation message.
+
+	2.	Feature: Save email as draft.
+	•	Scenario: Automatically save an email as draft when the compose window is closed without sending.
+	•	Given the user is composing an email in Gmail
+	•	When the user closes the compose window without clicking “Send”
+	•	Then the email should be saved in the “Drafts” folder.
+
+	3.	Feature: Enable the “Send” button after entering details.
+	•	Scenario: The “Send” button becomes enabled when both subject and body are entered.
+	•	Given the user is composing an email in Gmail
+	•	When the user enters a valid recipient email
+	•	And enters “Incubyte” in the subject field
+	•	And enters “QA test for Incubyte” in the body field
+	•	Then the “Send” button should be enabled.
+
+	4.	Feature: Attach a file to an email.
+	•	Scenario: Attach a file to the composed email and send it.
+	•	Given the user is composing an email in Gmail
+	•	When the user attaches a valid file
+	•	And clicks “Send”
+	•	Then the email should be sent with the attachment.
+
+	5.	Feature: Format email body text.
+	•	Scenario: Successfully format text in the email body.
+	•	Given the user is composing an email in Gmail
+	•	When the user enters “QA test for Incubyte” in the body
+	•	And applies bold, italic, and underline formatting
+	•	Then the text should be formatted accordingly in the email body.
+
+Negative Test Cases
+
+	6.	Feature: Send an email without a recipient.
+	•	Scenario: Display an error when trying to send an email without a recipient.
+	•	Given the user is composing an email in Gmail
+	•	When the user enters “Incubyte” in the subject
+	•	And enters “QA test for Incubyte” in the body
+	•	And does not enter a recipient in the “To” field
+	•	And clicks “Send”
+	•	Then an error message should be displayed indicating that a recipient is required.
+
+	7.	Feature: Send an email without a subject.
+	•	Scenario: Display a warning when sending an email without a subject.
+	•	Given the user is composing an email in Gmail
+	•	When the user enters a recipient and body
+	•	And leaves the subject field blank
+	•	And clicks “Send”
+	•	Then a warning should be displayed asking for confirmation to send the email without a subject.
+
+	8.	Feature: Send an email with an invalid recipient email address.
+	•	Scenario: Display an error when sending an email to an invalid email address.
+	•	Given the user is composing an email in Gmail
+	•	When the user enters an invalid email address (e.g., “invalid-email”) in the “To” field
+	•	And enters “Incubyte” in the subject and “QA test for Incubyte” in the body
+	•	And clicks “Send”
+	•	Then an error message should be displayed indicating the email address is invalid.
+
+	9.	Feature: Attach a file larger than the allowed size.
+	•	Scenario: Display an error when attaching a file that exceeds the size limit.
+	•	Given the user is composing an email in Gmail
+	•	When the user attaches a file larger than the size limit (e.g., 25 MB)
+	•	And clicks “Send”
+	•	Then an error message should be displayed indicating the attachment size exceeds the allowed limit.
+
+	10.	Feature: Send an email with an empty body.
+
+	•	Scenario: Prompt user to confirm when sending an email with an empty body.
+	•	Given the user is composing an email in Gmail
+	•	When the user enters “Incubyte” in the subject field
+	•	And leaves the body field blank
+	•	And clicks “Send”
+	•	Then a prompt should appear asking the user to confirm sending the email with an empty body.
+
+These BDD-style test cases cover essential aspects of composing and sending an email in Gmail, including both positive (successful actions) and negative (error and warning scenarios)
